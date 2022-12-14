@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1>Chrome Magic</h1>
         <p>
-          Hi, I made a React app for a magic shop productivity extention.
+          Hi, I made a React app for a magic shop productivity extension.
         </p>
     
       </header>
