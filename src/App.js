@@ -1,17 +1,21 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import './App.css';
+import Navbar from "./components/Navbar/Navbar";
+import Goals from "./pages/Goals/Goals";
+import Shop from "./pages/Shop/Shop";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Chrome Magic</h1>
-        <p>
-          Hi, I made a React app for a magic shop productivity extension.
-        </p>
-    
-      </header>
-    </div>
+      <BrowserRouter>
+         <Navbar/> 
+         <Routes>
+            <Route path="/" exact element = {<Goals/>} />
+            <Route path="/shop" exact element = {<Shop/>} />
+
+         </Routes>
+      </BrowserRouter>
   );
 }
 
