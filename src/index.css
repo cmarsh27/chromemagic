@@ -42,3 +42,11 @@ body {
   color: inherit;
   margin: 0.5em;
 }
+
+.rare{
+  color: gold;
+}
+
+.uncommon{
+  color: turquoise;
+}
