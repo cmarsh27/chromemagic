@@ -11,12 +11,13 @@ const itemData = [
                   {title : "Broken wand", quantity : "6", rarity: "common", description : "Perhaps you can fix it?"}
                   ]
                   
-let inventory=[]
+let randItems = []
 
 const Shop = () => {
 
+  const [inventory, setcurrentInventory] = useState([])
+
   const random = Math.floor(Math.random() * itemData.length)
-  let randItems = []
   
   const selectRand = () => {
       while (randItems.length < 3) {
@@ -26,25 +27,40 @@ const Shop = () => {
           newentry.quantity=Math.ceil(Math.random() * newentry.quantity)
           randItems.push(newentry)
         }
-
       }
-
   }
 
   selectRand()
 
+  const buyItem = (item) => {
+    if (item.quantity>0) {
+      item.quantity-=1
+      const newInventory = [...inventory,  item ];
+      setcurrentInventory(newInventory)
+      console.log(newInventory)
+
+    }
+  }
+
   return (
     <>
         <header className="header">
-            <h1>What's for sale?</h1>
-            {randItems.map((item, index) => 
+            <h1>What's for sale?</h1> 
+        </header>
+        <section className='section'>
+        {randItems.map((item, index) => 
                 <div key = {index} className={item.rarity} >
                 <h3>{item.title} - {item.quantity}</h3>
                 <p className='description'> {item.description} </p>
+                <button onClick={() => {buyItem(item)}}>Buy Item</button>
                 </div>
             )}
-        </header>
-        <section className='section'>
+        
+        {inventory.map((item,index) =>
+            <div key={index} className="inventory">
+            <p>{item.title}</p>
+            </div>
+          )}
 
         </section>
   </>
