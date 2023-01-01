@@ -4,7 +4,9 @@ const goalData = [{title : "Brush your damn teeth.", expires : "24", completed :
 
 const Goals = () => {
   const [newGoal, setNewGoal] = useState({title : "", expires : "24", completed : "false"})
+
   const limit = 3;
+
   const addGoal = (e) => {
     e.preventDefault();
     if (goalData.length < limit){
@@ -24,6 +26,7 @@ const Goals = () => {
                 {goalData.map((goal, index) => 
                 <div key = {index}>
                 <p>{goal.title}  -   {goal.completed}</p> 
+
                 </div>
                 )}
             </div>
