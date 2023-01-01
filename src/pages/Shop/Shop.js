@@ -48,13 +48,15 @@ const Shop = () => {
             <h1>What's for sale?</h1> 
         </header>
         <section className='section'>
-        {randItems.map((item, index) => 
-                <div key = {index} className={item.rarity} >
-                <h3>{item.title} - {item.quantity}</h3>
-                <p className='description'> {item.description} </p>
-                <button onClick={() => {buyItem(item)}}>Buy Item</button>
-                </div>
-            )}
+        <div className='shop-items'>
+          {randItems.map((item, index) => 
+                  <div key = {index} className={item.rarity} >
+                  <h3>{item.title} - {item.quantity}</h3>
+                  <p className='description'> {item.description} </p>
+                  <button onClick={() => {buyItem(item)}}>Buy Item</button>
+                  </div>
+              )}
+          </div>
         
         {inventory.map((item,index) =>
             <div key={index} className="inventory">
