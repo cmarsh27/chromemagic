@@ -39,6 +39,20 @@ button:hover{
   flex:1;
 }
 
+.recipe-list{
+  width:100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.recipe-list div{
+  flex:1;
+  padding: 1.5em;
+}
+
 .header {
   text-align: center;
   background-color: #312E40;
