@@ -1,30 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Lato:wght@300;400&display=swap');
 
+:root {
+
+  --brand-color: #E57A44;
+  --dark-color: #480f62;
+  --mid-color: #ffa273;
+  --light-color: #FAF5FF;
+    }
+
 body {
   margin: 0;
   font-family: 'Courgette', cursive;
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--mid-color);
+  background-color: var(--light-color);
 }
 
 h1,h2,h3{
   font-family: 'Courgette', cursive;
+  color: var(--light-color);
 }
 
 button{
-  color: #312E40;
-  background-color: #d2ccf3;
+  color: var(--light-color);
+  background-color: var(--brand-color);
   padding: 1em;
-  border: none;
+  border: 2px solid var(--brand-color);
   border-radius: 0.6em;
   transition-duration: 0.3s; 
 }
 
 button:hover{
-  background-color: #312E40;
-  color: #d2ccf3;
+  background-color: var(--dark-color);
+  color: var(--brand-color);
   cursor: pointer;
+}
+
+.branding{
+  color:var(--brand-color)
 }
 
 .shop-items{
@@ -48,31 +63,35 @@ button:hover{
   flex-wrap: wrap;
 }
 
-.recipe-list div{
+.recipe-item{
   flex:1;
+  height: 350px;
   padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
   text-align: center;
-  background-color: #312E40;
+  background-color: var(--dark-color);
   min-height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--light-color);
 }
 
 .section {
   text-align: center;
-  background-color: #312E40;
+  background-color: var(--dark-color);
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 8vh 0;
-  color: white;
+  color: var(--light-color);
 }
 
 .Navbar {
@@ -86,7 +105,7 @@ button:hover{
 .nav-link{
   font-family: 'Courgette', cursive;
   text-decoration: none;
-  color: inherit;
+  color: var(--dark-color);
   margin: 0.5em;
 }
 

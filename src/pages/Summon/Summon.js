@@ -32,10 +32,10 @@ const summonItem = (item) => {
             <h1>What will you summon?</h1> 
         </header>
         <section className='section'>
-            <p>Spirit: {spirit} </p>    
+            <p className='description'>Spirit: {spirit} </p>    
             <div className='recipe-list'>
             {recipes.map((item, index) => 
-                    <div key = {index} >
+                    <div key = {index} className="recipe-item" >
                     <h3>{item.title} - {item.cost}</h3>
                     <p className='description'> {item.description} </p>
                     <button onClick={() => {summonItem(item)}}>Summon Item</button>
@@ -46,7 +46,7 @@ const summonItem = (item) => {
             <h3>Inventory</h3>    
             {inventory.map((item,index) =>
             <div key={index} className="inventory">
-            <p>{item.title}</p>
+            <p className='description'>{item.title}</p>
             </div>
           )}
 
