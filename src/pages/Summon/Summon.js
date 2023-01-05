@@ -12,15 +12,13 @@ const recipes=[
 
 
 
-const Summon = () => {
+const Summon = ({spirit, modifySpirit}) => {
 
-const [spirit, updateSpirit] = useState(500)
 const [inventory, setcurrentInventory] = useState([])
 
 const summonItem = (item) => {
     if (spirit>=item.cost) {
-      const newspirit = spirit-item.cost
-      updateSpirit(newspirit)
+      modifySpirit(-item.cost)
       const newInventory = [...inventory,  item ];
       setcurrentInventory(newInventory)
     }
@@ -32,7 +30,7 @@ const summonItem = (item) => {
             <h1>What will you summon?</h1> 
         </header>
         <section className='section'>
-            <p className='description'>Spirit: {spirit} </p>    
+            <h4 className='description'>Spirit: {spirit} </h4>    
             <div className='recipe-list'>
             {recipes.map((item, index) => 
                     <div key = {index} className="recipe-item" >

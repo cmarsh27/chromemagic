@@ -2,13 +2,13 @@ import React, {useState} from 'react'
 
 
 
-const Goals = () => {
+const Goals = ({spirit, modifySpirit}) => {
   const [goalData, setNewGoalData] = useState([])
   const [newGoal, setNewGoal] = useState({title : "", expires : "24", completed : "false"})
-  
   const [locked, setLocked] = useState(false)
 
   const limit = 3;
+  const spiritInc = 50;
 
   const addGoal = (e) => {
     e.preventDefault()
@@ -32,6 +32,7 @@ const Goals = () => {
   const completeGoal = (index) => {
     if (goalData.length <= 1 ){
       setLocked(false)
+      modifySpirit(spiritInc)
     }
 
     alert("You did it!")
@@ -49,6 +50,7 @@ const Goals = () => {
             <p>Choose three goals and write them down below. Once you're happy with your choices, lock them in for the day. </p>
             <p>Check off your goals as you complete them. Try to complete all 3!</p>
             <br />
+            <h4>Spirit : {spirit}</h4>
             <div>
               <h2>These are your goals..</h2>
                 {goalData.map((goal, index) => 

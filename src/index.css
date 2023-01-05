@@ -102,11 +102,23 @@ button:hover{
   padding: 0 5em;
 }
 
+.nav-items{
+  display:flex;
+}
+
 .nav-link{
   font-family: 'Courgette', cursive;
   text-decoration: none;
   color: var(--dark-color);
   margin: 0.5em;
+}
+
+.currency-display{
+  display:flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 0.8em;
+ 
 }
 
 .rare{

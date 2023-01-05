@@ -14,7 +14,7 @@ const itemData = [
                   
 let randItems = []
 
-const Shop = () => {
+const Shop = ({ducats, modifyDucats}) => {
 
   const [inventory, setcurrentInventory] = useState([])
 
@@ -49,6 +49,8 @@ const Shop = () => {
             <h1>What's for sale?</h1> 
         </header>
         <section className='section'>
+        <h4 className='description'>Ducats: {ducats} </h4>    
+
         <div className='shop-items'>
           {randItems.map((item, index) => 
                   <div key = {index} >
