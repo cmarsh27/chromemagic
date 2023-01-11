@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 
+import Inventory from "../../components/Inventory/Inventory";
 
-
-const Goals = ({spirit, modifySpirit}) => {
+const Goals = ({spirit, modifySpirit, inventory}) => {
   const [goalData, setNewGoalData] = useState([])
   const [newGoal, setNewGoal] = useState({title : "", expires : "24", completed : "false"})
   const [locked, setLocked] = useState(false)
+
 
   const limit = 3;
   const spiritInc = 50;
@@ -45,12 +46,20 @@ const Goals = ({spirit, modifySpirit}) => {
   return (
     <>
         <section className='section'>
-            <h1>Your Goals!</h1>
-            <h3>So, how does this work? </h3>
-            <p>Choose three goals and write them down below. Once you're happy with your choices, lock them in for the day. </p>
-            <p>Check off your goals as you complete them. Try to complete all 3!</p>
-            <br />
-            <h4>Spirit : {spirit}</h4>
+          <div className="divided">
+            <div className='goal-intro'>
+              <h1>Your Goals!</h1>
+                <h3>So, how does this work? </h3>
+                <p>Choose three goals and write them down below. Once you're happy with your choices, lock them in for the day. </p>
+                <p>Check off your goals as you complete them. Try to complete all 3!</p>
+                <br />
+              <h4>Spirit : {spirit}</h4>
+            </div>
+            <Inventory inventory={inventory}/>
+
+          </div>
+
+
             <div>
               <h2>These are your goals..</h2>
                 {goalData.map((goal, index) => 
