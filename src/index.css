@@ -10,12 +10,12 @@
 
 body {
   margin: 0;
-  font-family: 'Courgette', cursive;
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--mid-color);
   background-color: var(--light-color);
+  min-height: 100vh;
 }
 
 h1,h2,h3{
@@ -34,6 +34,10 @@ button{
 
 p{
   opacity: 0.8;
+}
+
+a{
+  text-decoration: none;
 }
 
 button:hover{
@@ -87,15 +91,56 @@ button:hover{
   color: var(--light-color);
 }
 
-.section {
-  text-align: center;
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:10vh;
   background-color: var(--dark-color);
-  min-height: 80vh;
+  color: var(--light-color);
+  padding:0;
+  margin:0;
+}
+footer a{
+  color: var(--brand-color)
+}
+
+section {
+  text-align: center;
+  background-color:  var(--dark-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 8vh 10vw;
   color: var(--light-color);
+}
+.offwhite{
+  background-color: #e5e7eb;
+  color: var(--dark-color);
+}
+.offwhite h1{
+  color: var(--brand-color);
+}
+.offwhite h2,h3{
+  color: var(--dark-color); 
+}
+
+.bonus-list{
+  text-align: left;
+  font-size: 1.2em;
+}
+
+.fancy{
+    background-image: linear-gradient(to left, blue, green, yellow, orange, red);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.golden{
+	background-image: linear-gradient(to left, #8f6B29, #FDE08D, #DF9F28);
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .goal-intro{
@@ -132,6 +177,11 @@ button:hover{
   gap: 1em;
   font-size: 0.8em;
  
+}
+
+.big{
+  font-size: 2em;
+  margin:0;
 }
 
 .rare{

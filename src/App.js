@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Landing from "./pages/Landing/Landing";
 import Goals from "./pages/Goals/Goals";
 import Shop from "./pages/Shop/Shop";
 import Summon from "./pages/Summon/Summon";
@@ -38,10 +40,12 @@ function App() {
          <BrowserRouter>
             <Navbar spirit={spirit} ducats={ducats}/> 
             <Routes>
+               <Route path="/get-started" exact element = {<Landing/>} />
                <Route path="/" exact element = {<Goals spirit={spirit} modifySpirit={modifySpirit} inventory={inventory}/>} />
                <Route path="/shop" exact element = {<Shop ducats={ducats} modifyDucats={modifyDucats}/>} />
                <Route path="/summon" exact element = {<Summon spirit={spirit} modifySpirit={modifySpirit}/>} />
             </Routes>
+            <Footer/>
          </BrowserRouter>
    );
 }
