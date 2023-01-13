@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
-
-import Inventory from "../../components/Inventory/Inventory";
+import confetti from "canvas-confetti"
 
 const Goals = ({spirit, modifySpirit, inventory}) => {
   const [goalData, setNewGoalData] = useState([])
   const [newGoal, setNewGoal] = useState({title : "", expires : "24", completed : "false"})
   const [locked, setLocked] = useState(false)
-
+  const [message, setMessage] = useState("")
 
   const limit = 3;
   const spiritInc = 50;
@@ -34,9 +33,9 @@ const Goals = ({spirit, modifySpirit, inventory}) => {
     if (goalData.length <= 1 ){
       setLocked(false)
       modifySpirit(spiritInc)
+      setMessage(`You completed your daily goals and gained 50 Spirit!`)
     }
-
-    alert("You did it!")
+    confetti();
     let updatedGoals = [... goalData]
     updatedGoals.splice(index , 1)
     setNewGoalData(updatedGoals)
@@ -45,28 +44,16 @@ const Goals = ({spirit, modifySpirit, inventory}) => {
 
   return (
     <>
+        <header><h1>Your Goals!</h1></header>
         <section className='section'>
-          <div className="divided">
-            <div className='goal-intro'>
-              <h1>Your Goals!</h1>
-                <h3>So, how does this work? </h3>
-                <p>Choose three goals and write them down below. Once you're happy with your choices, lock them in for the day. </p>
-                <p>Check off your goals as you complete them. Try to complete all 3!</p>
-                <br />
-              <h4>Spirit : {spirit}</h4>
-            </div>
-            <Inventory inventory={inventory}/>
-
-          </div>
-
 
             <div>
-              <h2>These are your goals..</h2>
+              <h2>Today's Goals</h2>
                 {goalData.map((goal, index) => 
-                <div key = {index}>
-                <p>{goal.title}  -   {goal.completed}</p> 
+                <div key = {index} className="goal-item">
+                <p>{goal.title}</p> 
                 { !locked ? 
-                   <button onClick={() => removeGoal(index)}>x</button>
+                   <button className = "cross" onClick={() => removeGoal(index)}>x</button>
                   :
                   <button onClick={() => completeGoal(index)}>Complete</button>
                 }
@@ -78,10 +65,13 @@ const Goals = ({spirit, modifySpirit, inventory}) => {
             <div>
               <form onSubmit={addGoal}>
                 <input name = "title" type="text" placeholder='Walk the dog.' onChange={(e) => setNewGoal({ ...newGoal, title: e.target.value})}/>
+              
                     <button>Add Goal</button>
               </form>
             </div>
             }
+
+          <h4>{message}</h4>
 
 
 

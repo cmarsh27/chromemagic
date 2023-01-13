@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Landing from "./pages/Landing/Landing";
 import Goals from "./pages/Goals/Goals";
+import Catalog from "./pages/Catalog/Catalog";
 import Shop from "./pages/Shop/Shop";
 import Summon from "./pages/Summon/Summon";
 
@@ -42,7 +43,8 @@ function App() {
             <Routes>
                <Route path="/get-started" exact element = {<Landing/>} />
                <Route path="/" exact element = {<Goals spirit={spirit} modifySpirit={modifySpirit} inventory={inventory}/>} />
-               <Route path="/shop" exact element = {<Shop ducats={ducats} modifyDucats={modifyDucats}/>} />
+               <Route path="/catalog" exact element = {<Catalog ducats={ducats} modifyDucats={modifyDucats}/>} />
+               <Route path="/shop" exact element = {<Shop ducats={ducats} modifyDucats={modifyDucats}  inventory={inventory}/>} />
                <Route path="/summon" exact element = {<Summon spirit={spirit} modifySpirit={modifySpirit}/>} />
             </Routes>
             <Footer/>

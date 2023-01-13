@@ -13,7 +13,8 @@ const Navbar = ({spirit, ducats}) => {
           </div>
           <ul>
               <Link className='nav-link' to='/'>Goals</Link>
-              <Link className='nav-link' to='/shop'>Shop</Link>
+              <Link className='nav-link' to='/shop'>Sell</Link>
+              <Link className='nav-link' to='/catalog'>Catalog</Link>
               <Link className='nav-link' to='/summon'>Summon</Link>
           </ul>
         </div>

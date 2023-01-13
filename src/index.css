@@ -3,9 +3,10 @@
 :root {
 
   --brand-color: #E57A44;
-  --dark-color: #480f62;
-  --mid-color: #ffa273;
+  --dark-color: #5b2e6b;
+  --mid-color: #DBC6BB;
   --light-color: #FAF5FF;
+  --offwhite-color: #f1e4de; 
     }
 
 body {
@@ -13,14 +14,30 @@ body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--mid-color);
-  background-color: var(--light-color);
+  background-color: var(--offwhite-color);
+  color: var(--dark-color);
   min-height: 100vh;
 }
 
 h1,h2,h3{
   font-family: 'Courgette', cursive;
-  color: var(--light-color);
+}
+
+input[type="text"]{
+  padding: 1em;
+  border: 2px solid var(--brand-color);
+  border-radius: 0.6em;
+  margin: 0 1em;
+}
+
+input[type="text"]{
+  padding: 1em;
+  border: 2px solid var(--brand-color);
+  border-radius: 0.6em;
+  margin: 0 1em;
+}
+input:focus{
+  outline: none;
 }
 
 button{
@@ -32,19 +49,44 @@ button{
   transition-duration: 0.3s; 
 }
 
+button:hover{
+  background-color: var(--offwhite-color);
+  color: var(--dark-color);
+  cursor: pointer;
+}
+
+button.cross{
+  color: var(--dark-color);
+  background-color: transparent;
+  padding: 0 1em;
+  margin: 0;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 0.6em;
+  transition-duration: 0.3s; 
+} 
+button.cross:hover{
+  color: var(--brand-color);
+  background-color: transparent;
+  padding: 0 1em;
+  margin: 0;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 0.6em;
+  transition-duration: 0.3s; 
+} 
+
 p{
   opacity: 0.8;
+  font-size: 1.2em;
+
 }
 
 a{
   text-decoration: none;
 }
 
-button:hover{
-  background-color: var(--dark-color);
-  color: var(--brand-color);
-  cursor: pointer;
-}
+
 
 .branding{
   color:var(--brand-color)
@@ -80,7 +122,7 @@ button:hover{
   justify-content: space-between;
 }
 
-.header {
+header {
   text-align: center;
   background-color: var(--dark-color);
   min-height: 25vh;
@@ -100,6 +142,7 @@ footer{
   color: var(--light-color);
   padding:0;
   margin:0;
+  font-size: 0.8em;
 }
 footer a{
   color: var(--brand-color)
@@ -107,23 +150,12 @@ footer a{
 
 section {
   text-align: center;
-  background-color:  var(--dark-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8vh 10vw;
-  color: var(--light-color);
+  padding: 15vh 10vw;
 }
-.offwhite{
-  background-color: #e5e7eb;
-  color: var(--dark-color);
-}
-.offwhite h1{
-  color: var(--brand-color);
-}
-.offwhite h2,h3{
-  color: var(--dark-color); 
-}
+
 
 .bonus-list{
   text-align: left;
@@ -143,9 +175,14 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
-.goal-intro{
-  text-align: left;
+.goal-item{
+  display:flex;
+  justify-content: space-between;
+  gap:1em;
+  padding:0;
+  margin: 1em;
 }
+
 
 .divided{
   display:flex;
@@ -158,6 +195,7 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 0 5em;
+  background-color: var(--light-color);
 }
 
 .nav-items{
