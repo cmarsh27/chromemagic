@@ -5,11 +5,13 @@ const Navbar = ({spirit, ducats}) => {
   return (
     <nav className='Navbar'>
 
-        <Link className='nav-link' to='/'><h1 className='branding'>Chrome Magic</h1></Link>
+        <Link className='nav-link' to='/'><h1 className='branding'>Summon Success</h1></Link>
         <div className='nav-items'>
           <div className='currency-display'>
-                  <p>Ducats: {ducats}</p>
-                  <p>Spirit: {spirit}</p>
+                  <img src={require("../../Icons/puzzle.png")}></img> 
+                  <p>{ducats}</p>
+                  <img src={require("../../Icons/potion1-blue.png")}></img>
+                  <p> {spirit}</p>
           </div>
           <ul>
               <Link className='nav-link' to='/'>Goals</Link>
