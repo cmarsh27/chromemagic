@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 
 import Inventory from '../../components/Inventory/Inventory'
+import ItemCard from '../../components/ItemCard/ItemCard'
 
 
-
-const Shop = ({ducats, modifyDucats, inventory}) => {
+const Shop = ({ducats, modifyDucats, inventory, removeInventory}) => {
 
 
 
@@ -18,6 +18,14 @@ const Shop = ({ducats, modifyDucats, inventory}) => {
           <h4 className='description'>Ducats: {ducats} </h4>    
           <p>This is your Magic shop! You can't do anything here yet.</p>
           <Inventory inventory={inventory}/>
+          <div className='recipe-list'>
+            {inventory.map((item, index) => 
+                    <div key = {index} className="recipe-item" >
+                    <ItemCard item = {item}/>
+                    <button onClick={() => removeInventory(item)}>Sell Item</button>
+                    </div>
+                )}
+            </div>
   
 
         </section>

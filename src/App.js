@@ -37,6 +37,19 @@ function App() {
       setDucats(current => current + modifier);
    }
 
+   const addInventory = item => {
+      //setInventory(current => current.push(item))
+      const newInventory = [...inventory,  item ];
+      setInventory(newInventory)
+      modifySpirit(-item.cost)
+   }
+
+   const removeInventory = item => {
+      const newInventory = inventory.filter((current) => current.title !== item.title)
+      setInventory(newInventory)
+      console.log(newInventory)
+   }
+
    return (
          <BrowserRouter>
             <Navbar spirit={spirit} ducats={ducats}/> 
@@ -44,8 +57,8 @@ function App() {
                <Route path="/get-started" exact element = {<Landing/>} />
                <Route path="/" exact element = {<Goals spirit={spirit} modifySpirit={modifySpirit} inventory={inventory}/>} />
                <Route path="/catalog" exact element = {<Catalog ducats={ducats} modifyDucats={modifyDucats} inventory={inventory}/>} />
-               <Route path="/shop" exact element = {<Shop ducats={ducats} modifyDucats={modifyDucats}  inventory={inventory}/>} />
-               <Route path="/summon" exact element = {<Summon spirit={spirit} modifySpirit={modifySpirit} inventory={inventory}/>} />
+               <Route path="/shop" exact element = {<Shop ducats={ducats} modifyDucats={modifyDucats}  inventory={inventory} removeInventory={removeInventory}/>} />
+               <Route path="/summon" exact element = {<Summon spirit={spirit} modifySpirit={modifySpirit} inventory={inventory} addInventory={addInventory}/>} />
             </Routes>
             <Footer/>
          </BrowserRouter>

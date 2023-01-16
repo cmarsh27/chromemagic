@@ -16,19 +16,19 @@ const recipes=[
 */
 
 const items = [
-  {title : "Invisibility potion", quantity : "10", rarity : "common", description : "Drink to turn invisible", image: "jar-water.png"},
-  {title : "Flying potion", quantity : "10", rarity: "common", description : "Make sure you land before it wears off", image : "potion1-green.png"},
-  {title : "Big cauldron", quantity : "8", rarity: "common", description : "Use to brew big potions", image : "pot1.png"},
-  {title : "Pointy wizard hat", quantity : "3", rarity: "uncommon", description : "Very important wizard gear", image : "satchel.png"},
-  {title : "Shiny dragon egg", quantity : "1", rarity: "rare", description : "Keep it near the fire", image : "puzzle.png"},
-  {title : "Floppy fish", quantity : "5", rarity: "uncommon", description : "Flop flop flop flop", image : "root.png"},
-  {title : "Love potion", quantity : "10", rarity: "common", description : "The most dangerous potion of all",image : "jar-red.png"},
-  {title : "Broken wand", quantity : "6", rarity: "common", description : "Perhaps you can fix it?", image : "torch.png"}
+  {title : "Invisibility potion", cost : "10", rarity : "common", description : "Drink to turn invisible", image: "jar-water.png"},
+  {title : "Flying potion", cost : "10", rarity: "common", description : "Make sure you land before it wears off", image : "potion1-green.png"},
+  {title : "Big cauldron", cost : "8", rarity: "common", description : "Use to brew big potions", image : "pot1.png"},
+  {title : "Pointy wizard hat", cost : "3", rarity: "uncommon", description : "Very important wizard gear", image : "satchel.png"},
+  {title : "Shiny dragon egg", cost : "1", rarity: "rare", description : "Keep it near the fire", image : "puzzle.png"},
+  {title : "Floppy fish", cost : "5", rarity: "uncommon", description : "Flop flop flop flop", image : "root.png"},
+  {title : "Love potion", cost : "10", rarity: "common", description : "The most dangerous potion of all",image : "jar-red.png"},
+  {title : "Broken wand", cost : "6", rarity: "common", description : "Perhaps you can fix it?", image : "torch.png"}
   ]
 
 
 
-const Summon = ({spirit, modifySpirit, inventory}) => {
+const Summon = ({spirit, modifySpirit, inventory, addInventory}) => {
 
 /* 
 const summonItem = (item) => {
@@ -50,7 +50,7 @@ const summonItem = (item) => {
             {items.map((item, index) => 
                     <div key = {index} className="recipe-item" >
                     <ItemCard item = {item}/>
-                    <button >Summon Item</button>
+                    <button onClick={() => addInventory(item)}>Summon Item</button>
                     </div>
                 )}
             </div>
