@@ -3,10 +3,10 @@ import React from 'react'
 const Landing = () => {
   return (
     <div>
-        <section className='offwhite'>
-            <h1>Productivity just got more Magical</h1>
-
-        </section>
+        <header>
+            <h1>Achieve your Goals and Build a Magic Business ?? </h1>
+            <h2 className='subheading'>Everyone struggles doing their daily task. With Summoning Success, you turn your productivity into your very own thriving magic shop. </h2>
+        </header>
         <section >
         <div className='divided'>
                 <div>

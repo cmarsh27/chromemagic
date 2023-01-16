@@ -43,9 +43,9 @@ function App() {
             <Routes>
                <Route path="/get-started" exact element = {<Landing/>} />
                <Route path="/" exact element = {<Goals spirit={spirit} modifySpirit={modifySpirit} inventory={inventory}/>} />
-               <Route path="/catalog" exact element = {<Catalog ducats={ducats} modifyDucats={modifyDucats}/>} />
+               <Route path="/catalog" exact element = {<Catalog ducats={ducats} modifyDucats={modifyDucats} inventory={inventory}/>} />
                <Route path="/shop" exact element = {<Shop ducats={ducats} modifyDucats={modifyDucats}  inventory={inventory}/>} />
-               <Route path="/summon" exact element = {<Summon spirit={spirit} modifySpirit={modifySpirit}/>} />
+               <Route path="/summon" exact element = {<Summon spirit={spirit} modifySpirit={modifySpirit} inventory={inventory}/>} />
             </Routes>
             <Footer/>
          </BrowserRouter>

@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 
+import Inventory from '../../components/Inventory/Inventory'
+import ItemCard from '../../components/ItemCard/ItemCard'
+
 
 const itemData = [
                   {title : "Invisibility potion", quantity : "10", rarity : "common", description : "Drink to turn invisible", image: "jar-water.png"},
@@ -15,9 +18,8 @@ const itemData = [
 let randItems = []
 
 
-const Catalog = ({ducats, modifyDucats}) => {
+const Catalog = ({ducats, modifyDucats, inventory}) => {
 
-    const [inventory, setcurrentInventory] = useState([])
 
     const random = Math.floor(Math.random() * itemData.length)
     
@@ -33,7 +35,7 @@ const Catalog = ({ducats, modifyDucats}) => {
     }
   
     selectRand()
-  
+  /*
     const buyItem = (item) => {
       if (item.quantity>0) {
         item.quantity-=1
@@ -43,6 +45,8 @@ const Catalog = ({ducats, modifyDucats}) => {
   
       }
     }
+
+  */
   
     return (
       <>
@@ -50,7 +54,6 @@ const Catalog = ({ducats, modifyDucats}) => {
               <h1>What's for sale?</h1> 
           </header>
           <section className='section'>
-          <h4 className='description'>Ducats: {ducats} </h4>    
   
           <div className='shop-items'>
             {randItems.map((item, index) => 
@@ -58,16 +61,15 @@ const Catalog = ({ducats, modifyDucats}) => {
                     <img src={require("../../Icons/" +  item.image)}></img>
                     <h3 className={item.rarity}>{item.title} - {item.quantity}</h3>
                     <p className='description'> {item.description} </p>
-                    <button onClick={() => {buyItem(item)}}>Buy Recipe</button>
+                    <button onClick={() => {console.log("buy item")}}>Buy Recipe</button>
                     </div>
                 )}
             </div>
+          <div className="divided">
+            <h4 className='description'>Ducats: {ducats} </h4>    
+            <Inventory inventory={inventory}/>
+          </div>
           
-          {inventory.map((item,index) =>
-              <div key={index} className="inventory">
-              <p className='description'>{item.title}</p>
-              </div>
-            )}
   
           </section>
     </>

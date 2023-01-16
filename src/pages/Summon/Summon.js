@@ -1,5 +1,9 @@
 import React, {useState} from 'react'
 
+import ItemCard from '../../components/ItemCard/ItemCard'
+import Inventory from '../../components/Inventory/Inventory'
+
+/*
 const recipes=[
     {title : "Enlargement Potion", description : "Pour it on anything to increase the size", cost : "100"},
     {title : "Cat Familiar", description : "Cute and reliable!", cost : "200"},
@@ -9,20 +13,32 @@ const recipes=[
     {title : "Oak Wood Wand", description : "A sturdy wand", cost : "150"},
     {title : "Wizard Cloak", description : "It shimmers in the light", cost : "200"}
 ]
+*/
+
+const items = [
+  {title : "Invisibility potion", quantity : "10", rarity : "common", description : "Drink to turn invisible", image: "jar-water.png"},
+  {title : "Flying potion", quantity : "10", rarity: "common", description : "Make sure you land before it wears off", image : "potion1-green.png"},
+  {title : "Big cauldron", quantity : "8", rarity: "common", description : "Use to brew big potions", image : "pot1.png"},
+  {title : "Pointy wizard hat", quantity : "3", rarity: "uncommon", description : "Very important wizard gear", image : "satchel.png"},
+  {title : "Shiny dragon egg", quantity : "1", rarity: "rare", description : "Keep it near the fire", image : "puzzle.png"},
+  {title : "Floppy fish", quantity : "5", rarity: "uncommon", description : "Flop flop flop flop", image : "root.png"},
+  {title : "Love potion", quantity : "10", rarity: "common", description : "The most dangerous potion of all",image : "jar-red.png"},
+  {title : "Broken wand", quantity : "6", rarity: "common", description : "Perhaps you can fix it?", image : "torch.png"}
+  ]
 
 
 
-const Summon = ({spirit, modifySpirit}) => {
+const Summon = ({spirit, modifySpirit, inventory}) => {
 
-const [inventory, setcurrentInventory] = useState([])
-
+/* 
 const summonItem = (item) => {
     if (spirit>=item.cost) {
       modifySpirit(-item.cost)
       const newInventory = [...inventory,  item ];
-      setcurrentInventory(newInventory)
+     setcurrentInventory(newInventory)
     }
   }
+*/
 
   return (
     <>
@@ -30,23 +46,20 @@ const summonItem = (item) => {
             <h1>What will you summon?</h1> 
         </header>
         <section className='section'>
-            <h4 className='description'>Spirit: {spirit} </h4>    
             <div className='recipe-list'>
-            {recipes.map((item, index) => 
+            {items.map((item, index) => 
                     <div key = {index} className="recipe-item" >
-                    <h3>{item.title} - {item.cost}</h3>
-                    <p className='description'> {item.description} </p>
-                    <button onClick={() => {summonItem(item)}}>Summon Item</button>
+                    <ItemCard item = {item}/>
+                    <button >Summon Item</button>
                     </div>
                 )}
             </div>
-
-            <h3>Inventory</h3>    
-            {inventory.map((item,index) =>
-            <div key={index} className="inventory">
-            <p className='description'>{item.title}</p>
+            <div className="divided">
+              <h4 className='description'>Spirit: {spirit} </h4>    
+              <Inventory inventory={inventory}/>
             </div>
-          )}
+
+         
 
           </section>   
   </>

@@ -22,6 +22,13 @@ body {
 h1,h2,h3{
   font-family: 'Courgette', cursive;
 }
+h1{
+  font-size: 2em;
+}
+.subheading{
+  opacity: 0.8;
+  color: var(--brand-color);
+}
 
 input[type="text"]{
   padding: 1em;
@@ -93,11 +100,10 @@ a{
 }
 
 .shop-items{
-  width:100vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6em;
+  margin: 8vh 0 16vh;
 }
 
 .shop-items div{
@@ -105,22 +111,27 @@ a{
 }
 
 .recipe-list{
-  width:100vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2em;
+  margin: 8vh 0 16vh;
+}
+@media all and (max-width: 992px) { 
+  .recipe-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media all and (max-width: 576px) { 
+  .recipe-list {
+    grid-template-columns: 1fr;
+  }
 }
 
-.recipe-item{
-  flex:1;
-  height: 350px;
-  padding: 1.5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.item-card{
+  min-height:22vh;
 }
+
+
 
 header {
   text-align: center;
@@ -131,6 +142,7 @@ header {
   align-items: center;
   justify-content: center;
   color: var(--light-color);
+  padding: 0 16vw;
 }
 
 footer{
