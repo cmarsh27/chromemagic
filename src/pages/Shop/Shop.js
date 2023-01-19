@@ -33,6 +33,7 @@ const Shop = ({ducats, modifyDucats, inventory, removeInventory, stock, addStock
           <div>
 
           <h2>Inventory</h2>
+          
           {inventory.map((item, index) => 
               <div key = {index} className="inventory-item">
                   <img src={require("../../Icons/" +  item.image)}></img>

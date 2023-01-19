@@ -4,7 +4,7 @@ const Inventory = ({inventory}) => {
     console.log(inventory)
   return (
     <div>
-        <h3>Inventory</h3>
+        <h2>Inventory</h2>
         {inventory.map((item, index) => 
             <div key = {index} className="inventory-item">
                 <img src={require("../../Icons/" +  item.image)}></img>

@@ -48,20 +48,26 @@ const summonItem = (item) => {
         <section className='section'>
             <div className='recipe-list'>
             {items.map((item, index) => 
-                    <div key = {index} className="recipe-item" >
+                    <div key = {index} className="recipe-item item-card" >
                     <ItemCard item = {item}/>
                     <button onClick={() => addInventory(item)}>Summon Item</button>
                     </div>
                 )}
             </div>
-            <div className="divided">
-              <h4 className='description'>Spirit: {spirit} </h4>    
-              <Inventory inventory={inventory}/>
-            </div>
-
-         
-
           </section>   
+
+          <section className='light'>
+          <div className="divided">
+          <div className='currency-display'>
+                  <img src={require("../../Icons/potion1-blue.png")}></img> 
+                  <p>{spirit}</p>
+          </div>
+          <Inventory inventory={inventory}/>
+          </div>
+
+
+
+        </section>
   </>
   )
 }

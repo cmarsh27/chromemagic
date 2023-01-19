@@ -112,16 +112,16 @@ a{
   flex:1;
 }
 
-.shoppe-stock{
-  display: flex;
-}
 
-.shop-item{
+.item-card{
   width: 15vw;
   background:rgba(255, 255, 255, 0.5);
   border-radius: 2em;
   padding:2em 1em ;
-  margin:2em;
+  margin:2em 0 ;
+  min-height:22vh;
+  flex: 1;
+
 }
 
 .light{
@@ -133,10 +133,11 @@ a{
 }
 
 .recipe-list{
+  margin: 0 15vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2em;
-  margin: 8vh 0 16vh;
+
 }
 @media all and (max-width: 992px) { 
   .recipe-list {
@@ -147,10 +148,6 @@ a{
   .recipe-list {
     grid-template-columns: 1fr;
   }
-}
-
-.item-card{
-  min-height:22vh;
 }
 
 

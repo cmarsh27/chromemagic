@@ -57,7 +57,7 @@ const Catalog = ({ducats, modifyDucats, inventory}) => {
   
           <div className='shop-items'>
             {randItems.map((item, index) => 
-                    <div key = {index} >
+                    <div key = {index} className="item-card">
                     <img src={require("../../Icons/" +  item.image)}></img>
                     <h3 className={item.rarity}>{item.title} - {item.quantity}</h3>
                     <p className='description'> {item.description} </p>
@@ -65,13 +65,20 @@ const Catalog = ({ducats, modifyDucats, inventory}) => {
                     </div>
                 )}
             </div>
-          <div className="divided">
-            <h4 className='description'>Ducats: {ducats} </h4>    
-            <Inventory inventory={inventory}/>
-          </div>
-          
-  
           </section>
+
+          <section className='light'>
+          <div className="divided">
+          <div className='currency-display'>
+                  <img src={require("../../Icons/puzzle.png")}></img> 
+                  <p>{ducats}</p>
+          </div>
+          <Inventory inventory={inventory}/>
+          </div>
+
+
+
+        </section>
     </>
     )
 }
