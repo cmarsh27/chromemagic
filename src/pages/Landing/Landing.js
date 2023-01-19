@@ -26,7 +26,7 @@ const Landing = () => {
             </div>
 
         </section>
-        <section className='dark magic-img' >
+        <section className='dark table-img' >
             <div>
                 <h2>Goals + Magic = Productivity like never before</h2>
             </div>

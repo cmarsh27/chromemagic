@@ -49,6 +49,8 @@ const Goals = ({spirit, modifySpirit, inventory}) => {
 
             <div>
               <h2>Today's Goals</h2>
+              <p>Add some goals to complete today...</p>
+              <br />
                 {goalData.map((goal, index) => 
                 <div key = {index} className="goal-item">
                 <p>{goal.title}</p> 
