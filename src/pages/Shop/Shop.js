@@ -24,13 +24,15 @@ const Shop = ({ducats, modifyDucats, inventory, removeInventory, stock, addStock
           <ShoppeStock stock={stock}/>
 
         </section>
-        <section>
+        <section className='light'>
           <div className="divided">
-          <h4 className='description'>Ducats: {ducats} </h4> 
-
+          <div className='currency-display'>
+                  <img src={require("../../Icons/puzzle.png")}></img> 
+                  <p>{ducats}</p>
+          </div>
           <div>
 
-          <h3>Inventory</h3>
+          <h2>Inventory</h2>
           {inventory.map((item, index) => 
               <div key = {index} className="inventory-item">
                   <img src={require("../../Icons/" +  item.image)}></img>

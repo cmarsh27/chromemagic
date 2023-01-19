@@ -24,6 +24,7 @@ body {
 
 h1,h2,h3{
   font-family: 'Courgette', cursive;
+  margin:0;
 }
 h1{
   font-size: 2em;
@@ -112,14 +113,23 @@ a{
 }
 
 .shoppe-stock{
-  display: flex;;
+  display: flex;
 }
+
 .shop-item{
   width: 15vw;
-  background:rgba(91, 46, 107, 0.1);
+  background:rgba(255, 255, 255, 0.5);
   border-radius: 2em;
   padding:2em 1em ;
   margin:2em;
+}
+
+.light{
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+.light p {
+  opacity: 0.7;
 }
 
 .recipe-list{
@@ -247,7 +257,7 @@ section.dark.table-img{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5em;
+  padding: 2vh 5em;
   background-color: var(--light-color);
 }
 
